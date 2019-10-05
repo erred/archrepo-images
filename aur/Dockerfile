@@ -5,7 +5,7 @@ RUN pacman -S --noconfirm --noprogressbar git && \
     echo "user ALL=NOPASSWD: ALL" >> /etc/sudoers
 USER user
 WORKDIR /home/user
-RUN git clone https://aur.archlinux.org/yay.git && \
+RUN git clone https://aur.archlinux.org/yay-bin.git && \
     cd yay && \
     makepkg -si --noconfirm --noprogressbar && \
     cd .. && \
