@@ -7,4 +7,4 @@ A repo for archrepo
 
 ## base-devel
 
-[![workflow](https://github.com/seankhliao/arch-repo/workflows/base-devel/badge.svg)](https://github.com/seankhliao/archrepo/actions)
+[![workflow](https://github.com/seankhliao/archrepo/workflows/base-devel/badge.svg)](https://github.com/seankhliao/archrepo/actions)
