@@ -1,0 +1,28 @@
+name: base-devel
+on:
+  push:
+    paths:
+      - ".github/workflows/base-devel.yaml"
+      - "base-devel/*"
+  schedule:
+    - cron: "0 0 * * *"
+env:
+  IMG: docker.pkg.github.com/seankhliao/archrepo/base-devel
+  SHORTSHA: ${GITHUB_SHA:0:7}
+jons:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+      - name: login
+        run: docker login registry -u USER -p $TOKEN
+        env:
+          TOKEN: ${{ secrets.PAT }}
+      - name: build
+        run: docker build -t $IMG:latest -t $IMG:$SHORTSHA base-devel
+      - name: push sha
+        run: docker push $IMG:$SHORTSHA
+      - name: push latest
+        run: docker push $IMG:latest
