@@ -1,3 +1,3 @@
 FROM archlinux/base
 
-RUN pacman -Syu -noconfirm base-devel
+RUN pacman -Syu --noconfirm --noprogressbar base-devel
