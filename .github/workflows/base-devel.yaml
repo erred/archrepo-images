@@ -17,7 +17,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
       - name: login
-        run: docker login registry -u USER -p $TOKEN
+        run: docker login registry -u seankhliao -p $TOKEN
         env:
           TOKEN: ${{ secrets.PAT }}
       - name: build
