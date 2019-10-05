@@ -2,7 +2,7 @@
 
 custom arch repo things
 
-[licence]: https://img.shields.io/github/license/seankhliao/archrepo.svg?style=flat-square
+[license]: https://img.shields.io/github/license/seankhliao/archrepo.svg?style=flat-square
 
 ## base-devel [![workflow][badge-01]][link-01] [![image][badge-02]][link-02]
 
