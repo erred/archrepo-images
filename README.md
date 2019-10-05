@@ -6,4 +6,5 @@ A repo for archrepo
 
 ## base-devel
 
-[![workflow](https://github.com/seankhliao/archrepo/workflows/base-devel/badge.svg)](https://github.com/seankhliao/archrepo/actions?workflow=base-devel)
+[![workflow](https://github.com/seankhliao/archrepo/workflows/base-devel/badge.svg?style=flat-square)](https://github.com/seankhliao/archrepo/actions?workflow=base-devel)
+[![image](https://img.shields.io/badge/image-base--devel-informational?style=flat-square)](https://github.com/seankhliao/archrepo/packages/31641)
