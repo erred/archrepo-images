@@ -8,8 +8,7 @@ on:
     - cron: "0 0 * * *"
 env:
   REGISTRY: docker.pkg.github.com
-  IMG: ${REGISTRY}/${GITHUB_REPOSITORY}/base-devel
-  SHORTSHA: ${GITHUB_SHA:0:7}
+  IMG: base-devel
 jobs:
   build:
     name: build
@@ -18,12 +17,12 @@ jobs:
       - name: checkout
         uses: actions/checkout@master
       - name: login
-        run: docker login ${REGISTRY} -u ${GITHUB_REPOSITORY%/*} -p $TOKEN
+        run: docker login ${REGISTRY} -u ${GITHUB_REPOSITORY%/*} -p ${TOKEN}
         env:
           TOKEN: ${{ secrets.PAT }}
       - name: build
-        run: docker build -t $IMG:latest -t $IMG:$SHORTSHA base-devel
+        run: docker build -t ${REGISTRY}/${GITHUB_REPOSITORY}/${IMG}:latest -t ${REGISTRY}/${GITHUB_REPOSITORY}/${IMG}:${GITHUB_SHA:0:7} ${IMG}
       - name: push sha
-        run: docker push $IMG:$SHORTSHA
+        run: docker push ${REGISTRY}/${GITHUB_REPOSITORY}/${IMG}:${GITHUB_SHA:0:7}
       - name: push latest
-        run: docker push $IMG:latest
+        run: docker push ${REGISTRY}/${GITHUB_REPOSITORY}/${IMG}:latest
