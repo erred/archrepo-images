@@ -7,5 +7,7 @@ RUN pacman -S --noconfirm --noprogressbar git && \
 USER user
 WORKDIR /home/user
 RUN git clone https://aur.archlinux.org/yay-bin.git && \
-    makepkg -si --noconfirm --noprogressbar -p yay-bin/PKGBUILD && \
+    cd yay-bin && \
+    makepkg -si --noconfirm --noprogressbar && \
+    cd .. && \
     rm -rf yay-bin
